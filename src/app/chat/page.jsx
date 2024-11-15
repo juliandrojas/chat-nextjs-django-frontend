@@ -28,9 +28,14 @@ export default function ChatPage() {
     
     return (
         <>
-            <div>Chat de {username}</div>
-            <MessageList messages={messages}/>
-            <MessageForm onMessageSent={fetchMessages}/>
+            <h1 className="text-center">Chat de {username}</h1>
+            <div className="container">
+                <MessageList messages={messages}/>
+                <div className="mt-3">
+                    <MessageForm onMessageSent={fetchMessages}/>
+                </div>
+            </div>
+            
         </>
     )    
 };

@@ -26,14 +26,19 @@ export default function MessageForm({ onMessageSent }) {
     return (
         <>
             <form onSubmit={handleSubmit}>
-                <textarea
-                    value={content}
-                    onChange={(e) => setContent(e.target.value)}
-                    name=""
-                    id=""
-                    placeholder="Escribe un mensaje"
-                ></textarea>
-                <button>Enviar</button>
+                <div className="form-floating">
+                    <textarea
+                        className="form-control"
+                        value={content}
+                        onChange={(e) => setContent(e.target.value)}
+                        name=""
+                        id=""
+                        placeholder="Escribe un mensaje"
+                    ></textarea>
+                </div>
+                <div className="my-2">
+                    <button className="btn btn-primary w-100">Enviar</button>
+                </div>
             </form>
         </>
     );

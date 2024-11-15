@@ -3,7 +3,11 @@ export default function MessageList({ messages }) {
     <>{
         messages?.map((message) => (
             <div key={message.id}>
-              <span><b>{message.author.name}: </b>{message.content}</span>
+              <div className="card">
+                <div className="card-body">
+                  <span><b>{message.author.name}: </b>{message.content}</span>
+                </div>
+              </div>
             </div>
         ))
       }
