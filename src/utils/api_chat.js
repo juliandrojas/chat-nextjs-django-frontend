@@ -21,3 +21,21 @@ export async function createMessage(username, content) {
         console.log("Error creando mensaje:", error);
     }
 }
+
+export async function getAuthorByUsername(username) {
+    try {
+        const response = await axios.get(API_URL + `authors/${username}`);
+        return response.data;
+    } catch (error) {
+        console.log("Error obteniendo autor:", error);
+    }
+}
+
+export async function updatedProfilePicture(){
+    try {
+        const author = await getAuthorByUsername(username);
+        const response = await axios.put(API_URL + "authors/" + author?.id + "/profile/picture")
+    } catch (error) {
+        console.log("Error actualizando autor ", error)
+    }
+}
