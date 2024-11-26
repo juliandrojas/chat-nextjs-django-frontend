@@ -2,13 +2,15 @@
 
 import MessageForm from "@/components/MessageForm";
 import MessageList from "@/components/MessageList";
+import ProfileEditModal from "@/components/ProfileEditModal.jsx";
 import { useEffect, useState } from "react";
-import { getMessages } from "../../utils/api_chat.js";
+import { getMessages } from "../../utils/api-chat.js";
 
 export default function ChatPage() {
 
     const [messages, setMessages] = useState([]);
     const [username, setUsername] = useState("");
+    const [showProfileModal, setShowProfileModal] = useState(false);
 
     async function fetchMessages() {
         try {
@@ -30,6 +32,17 @@ export default function ChatPage() {
         <>
             <h1 className="text-center">Chat de {username}</h1>
             <div className="container">
+                <div className="row">
+                    <div className="row">
+                        <button className="btn btn-primary" onClick={() => setShowProfileModal(true)}>Editar perfil</button>
+                        {
+                            showProfileModal && (
+                                <ProfileEditModal username={username} onClose={() => setShowProfileModal(false)}
+                                onProfileUpdated={fetchMessages}/>
+                            )
+                        }
+                    </div>
+                </div>
                 <MessageList messages={messages}/>
                 <div className="mt-3">
                     <MessageForm onMessageSent={fetchMessages}/>

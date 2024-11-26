@@ -1,6 +1,6 @@
 "use client";
 
-import { createMessage } from "@/utils/api_chat";
+import { createMessage } from "@/utils/api-chat";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
