@@ -35,6 +35,7 @@ export async function updatedProfilePicture(formData, username){
     try {
         const author = await getAuthorByUsername(username);
         const response = await axios.put(API_URL + "authors/" + author?.id + "/profile_picture/", formData);
+        console.log(response.data);
         return response;
     } catch (error) {
         console.log("Error actualizando autor ", error)
