@@ -9,7 +9,7 @@ const nextConfig = {
             {
                 protocol: "https",
                 //hostname: "127.0.0.1",
-                hostname: "chat-backend-clase-produccion.VERCEL",
+                hostname: "chat-backend-clase-produccion.vercel.app",
                 pathname: "/media/profile_pictures/**"
             }
         ]
