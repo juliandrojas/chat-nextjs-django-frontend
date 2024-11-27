@@ -7,7 +7,7 @@ export default function MessageList({ messages }) {
               <Image
             src={
               message.author.profile_picture != null
-                ? `https://chat-backend-clase-produccion.vercel.app${message.author.profile_picture}`
+                ? `https://chat-backend-clase-produccion.vercel.app/api/chat/${message.author.profile_picture}`
                 : "/img/no-image-icon-11.png"
             }
             width={50}
