@@ -7,7 +7,7 @@ export default function MessageList({ messages }) {
               <Image
             src={
               message.author.profile_picture != null
-                ? `http://127.0.0.1:8000${message.author.profile_picture}`
+                ? `https://hat-backend-clase-produccion.vercel.app:8000${message.author.profile_picture}`
                 : "/img/no-image-icon-11.png"
             }
             width={50}
